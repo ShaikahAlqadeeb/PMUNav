@@ -10,7 +10,7 @@ data class User(
 )
 
 class UserRegistrationService {
-    // In-memory user storage (simulate database)
+    // In-memory user storage
     private val users = mutableListOf<User>()
 
     fun registerUser(
@@ -53,11 +53,6 @@ class UserRegistrationService {
         require(password.length >= 8) { "Password must be at least 8 characters" }
         require(firstName.isNotBlank()) { "First name cannot be blank" }
         require(lastName.isNotBlank()) { "Last name cannot be blank" }
-    }
-
-    // Simple password hashing (note: use a real hashing library in production)
-    private fun hashPassword(password: String): String {
-        return password.hashCode().toString()
     }
 
     // Method to get all registered users (for demonstration)
