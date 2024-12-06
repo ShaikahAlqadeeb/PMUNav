@@ -49,7 +49,7 @@ class UserRegistrationService {
         lastName: String
     ) {
         require(email.isNotBlank()) { "Email cannot be blank" }
-        require(email.contains("@")) { "Invalid email format" }
+        require(email.contains("@")) { "Invalid email format, please enter valid email" }
         require(password.length >= 8) { "Password must be at least 8 characters" }
         require(firstName.isNotBlank()) { "First name cannot be blank" }
         require(lastName.isNotBlank()) { "Last name cannot be blank" }
