@@ -14,7 +14,7 @@ data class Feedback(
 class FeedbackService {
     // In-memory storage for feedbacks
     private val feedbacks = mutableListOf<Feedback>()
-    // Track feedback per interaction to prevent duplicates
+    // Prevent duplicates
     private val submittedInteractions = mutableSetOf<String>()
 
     fun submitFeedback(
@@ -29,7 +29,7 @@ class FeedbackService {
 
         // Check if feedback for this interaction already exists
         if (submittedInteractions.contains(interactionId)) {
-            throw IllegalStateException("Feedback for this interaction already submitted")
+            throw IllegalStateException("Feedback for this interaction is already submitted")
         }
 
         // Create feedback
